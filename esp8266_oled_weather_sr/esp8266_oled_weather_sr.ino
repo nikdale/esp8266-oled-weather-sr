@@ -56,7 +56,7 @@ void fetchWeather() {
         u8g2.drawUTF8(0, 36, (DISPLAY_TEMP_LABEL + String(temp, 1) + DISPLAY_TEMP_UNIT).c_str());
         u8g2.drawUTF8(0, 48, (DISPLAY_HUMID_LABEL + String(humidity) + DISPLAY_HUMID_UNIT).c_str());
         u8g2.drawUTF8(0, 60, (DISPLAY_WIND_LABEL + String(windSpeed, 1) + DISPLAY_WIND_UNIT).c_str());
-      } while (u8g2.nextPage())
+      } while (u8g2.nextPage());
     }
   } else {
     Serial.print("HTTP request failed: ");
