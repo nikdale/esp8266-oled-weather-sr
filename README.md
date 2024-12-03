@@ -2,7 +2,7 @@
 
 Real-time weather station using ESP8266 NodeMCU and OLED display, showing weather data in Serbian Cyrillic. The device fetches current weather conditions from OpenWeatherMap API and displays temperature, humidity, wind speed, and weather conditions.
 
-![Weather Station](insert_image_here.jpg)
+![Weather Station](assets/znik.jpg)
 
 ## Hardware Requirements
 
@@ -48,13 +48,14 @@ Real-time weather station using ESP8266 NodeMCU and OLED display, showing weathe
 ## Configuration
 
 1. Get your API key from [OpenWeatherMap](https://openweathermap.org/api)
-2. Open `esp8266_oled_weather_sr.ino`
-3. Update the following variables:
+2. Copy `config.h.example` to `config.h`
+3. Update the configuration variables in `config.h`:
 ```cpp
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* apiKey = "YOUR_API_KEY";
-const char* location = "YOUR_CITY"; // Default: Zeleznik
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define OWM_API_KEY "YOUR_API_KEY"
+#define OWM_LOCATION "YOUR_CITY"  // Default: Zeleznik
+#define DISPLAY_CITY "YOUR_CITY_IN_CYRILLIC"  // Default: Железник
 ```
 
 ## Wiring
@@ -91,7 +92,11 @@ Feel free to fork this project and submit pull requests. You can also open issue
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Acknowledgments
 
